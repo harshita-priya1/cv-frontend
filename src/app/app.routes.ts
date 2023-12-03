@@ -6,10 +6,7 @@ import { CreateTaskComponent } from './create-task/create-task.component';
 import { UpdateTaskComponent } from './update-task/update-task.component';
 
 export const routes: Routes = [
-  {
-    path: '',
-    component: SignInComponent,
-  },
+  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   {
     path: 'home',
     component: HomeComponent,

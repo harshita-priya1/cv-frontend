@@ -1,8 +1,10 @@
 <div>
   <input type="checkbox" id="completed" name="completed" value="Completed" />
   <label for="completed">Completed</label>
+
+  <div>{{ task.title }}</div>
 </div>
-<div>Description</div>
+<div>{{ task.description }}</div>
 <div>End Date</div>
 <button type="button" class="btn btn-primary">Delete</button>
 <button type="button" class="btn btn-primary">Update</button>

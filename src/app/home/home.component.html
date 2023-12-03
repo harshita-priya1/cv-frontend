@@ -1,4 +1,14 @@
-<p>home works!</p>
-<div *ngFor="let task of tasks">
-  <app-task [task]="task"></app-task>
+<nav class="nav">
+  <div>Tasks</div>
+  <button class="button logout" type="button" class="btn btn-primary">
+    Log Out
+  </button>
+</nav>
+
+<div class="list-of-tasks" *ngFor="let task of tasks">
+  <app-task class="task" [task]="task"></app-task>
 </div>
+
+<button class="button" type="button" class="btn btn-primary">
+  Add New Task
+</button>
