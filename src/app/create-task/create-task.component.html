@@ -1,4 +1,4 @@
-<form>
+<form (submit)="onSubmit(myForm)" #myForm="ngForm">
   <div class="form-group">
     <label for="title">Title: </label>
     <input
@@ -6,11 +6,21 @@
       class="form-control"
       id="title"
       placeholder="Enter title"
+      name="title"
+      ngModel
+      required
     />
   </div>
   <div class="form-group">
     <label for="description">Description: </label>
-    <textarea class="form-control" id="description" rows="3"></textarea>
+    <textarea
+      class="form-control"
+      id="description"
+      rows="3"
+      name="description"
+      ngModel
+      required
+    ></textarea>
   </div>
   <div class="form-group">
     <input
@@ -18,14 +28,23 @@
       class="form-control"
       id="completed"
       name="completed"
+      ngModel
+      required
       value="Completed"
     />
     <label for="completed">Completed</label>
   </div>
   <div class="form-group">
     <label for="endDate">End Date: </label>
-    <input type="date" class="form-control" id="endDate" />
+    <input
+      type="date"
+      class="form-control"
+      id="endDate"
+      name="endDate"
+      ngModel
+      required
+    />
   </div>
   <br />
-  <button type="submit" class="btn btn-primary">Create</button>
+  <input type="submit" class="btn btn-primary" value="Create" />
 </form>
