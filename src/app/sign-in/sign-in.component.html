@@ -1,32 +1,37 @@
-<form (submit)="onSubmit(myForm)" #myForm="ngForm">
-  <div class="form-group">
-    <label for="email">Email: </label>
-    <input
-      type="email"
-      class="form-control"
-      id="email"
-      placeholder="Enter email"
-      name="email"
-      ngModel
-      required
-    />
-  </div>
-  <div class="form-group">
-    <label for="password">Password: </label>
-    <input
-      type="password"
-      class="form-control"
-      id="password"
-      placeholder="Enter password"
-      name="password"
-      ngModel
-      required
-    />
-  </div>
-  <br />
-  <input type="submit" class="btn btn-primary" value="Sign In" />
-  <div class="form-group">
-    <br />
-    <a href="/sign-up">Sign Up</a>
-  </div>
-</form>
+<div class="container">
+  <form (submit)="onSubmit(myForm)" #myForm="ngForm">
+    <div class="small-container">
+      <div class="form-group">
+        <label for="email">Email: </label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="Enter email"
+          name="email"
+          ngModel
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password: </label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Enter password"
+          name="password"
+          ngModel
+          required
+        />
+      </div>
+      <br />
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Sign In" />
+        <br />
+        <br />
+        <a href="/sign-up">Sign Up</a>
+      </div>
+    </div>
+  </form>
+</div>

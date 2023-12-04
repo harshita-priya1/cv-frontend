@@ -1,0 +1,106 @@
+/* Your CSS File */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #4a301e;
+}
+.container {
+  background-color: #4a301e;
+}
+.Taskstitle {
+  text-decoration: underline;
+  margin-left: 20vw;
+  color: #8d8480;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.nav {
+  background-color: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.logo img {
+  max-width: 50px;
+  max-height: 2vh;
+  width: 5px;
+}
+
+.app-name {
+  font-weight: bold;
+  margin-right: auto;
+}
+.app-name h1 {
+  font-size: 24px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.logout {
+  background-color: #d9534f;
+  color: white;
+}
+
+.button.add-task {
+  background-color: #5bc0de;
+  color: white;
+}
+
+.container {
+  flex: 1;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.section-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* .list-of-tasks {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.task {
+  margin: 10px;
+} */
+.list-of-tasks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.task {
+  background-color: #8d8480;
+  padding: 8px;
+  margin: 16px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}

@@ -1,39 +1,44 @@
-<form (submit)="onSubmit(myForm)" #myForm="ngForm">
-  <div class="form-group">
-    <label for="title">Title: </label>
-    <input
-      type="text"
-      class="form-control"
-      id="title"
-      placeholder="Enter title"
-      name="title"
-      ngModel
-      required
-    />
-  </div>
-  <div class="form-group">
-    <label for="description">Description: </label>
-    <textarea
-      class="form-control"
-      id="description"
-      rows="3"
-      name="description"
-      ngModel
-      required
-    ></textarea>
-  </div>
+<div class="main">
+  <div class="container">
+    <form (submit)="onSubmit(myForm)" #myForm="ngForm">
+      <div class="heading">Update Task</div>
+      <div class="form-group">
+        <label for="title">Title: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          placeholder="Enter title"
+          name="title"
+          ngModel
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Description: </label>
+        <textarea
+          class="form-control"
+          id="description"
+          rows="3"
+          name="description"
+          ngModel
+          required
+        ></textarea>
+      </div>
 
-  <div class="form-group">
-    <label for="endDate">End Date: </label>
-    <input
-      type="date"
-      class="form-control"
-      id="endDate"
-      name="endDate"
-      ngModel
-      required
-    />
+      <div class="form-group">
+        <label for="endDate">End Date: </label>
+        <input
+          type="date"
+          class="form-control"
+          id="endDate"
+          name="endDate"
+          ngModel
+          required
+        />
+      </div>
+      <br />
+      <input type="submit" class="btn btn-primary" value="Update" />
+    </form>
   </div>
-  <br />
-  <input type="submit" class="btn btn-primary" value="Update" />
-</form>
+</div>
