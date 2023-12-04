@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  // private apiUrl = 'https://cv-backend-4cdl9.ondigitalocean.app';
-  private apiUrl = 'http://localhost:5001';
+  private apiUrl = 'https://cv-backend-4cdl9.ondigitalocean.app';
+  // private apiUrl = 'http://localhost:5001';
   constructor(private http: HttpClient) {}
 
   signIn(email: string, password: string): Observable<any> {

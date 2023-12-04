@@ -31,10 +31,6 @@ export class CreateTaskComponent {
         (response: any) => {
           console.log(response);
           if (response.status === 201) {
-            //setting access token
-            if (response.accessToken) {
-              localStorage.setItem('accessToken', response.accessToken);
-            }
             this.router.navigate(['/home']);
           } else {
             alert('Error while creating task!');

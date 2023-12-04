@@ -12,8 +12,8 @@ interface User {
   providedIn: 'root',
 })
 export class TaskService {
-  // private apiUrl = 'https://cv-backend-4cdl9.ondigitalocean.app';
-  private apiUrl = 'http://localhost:5001';
+  private apiUrl = 'https://cv-backend-4cdl9.ondigitalocean.app';
+  // private apiUrl = 'http://localhost:5001';
   constructor(private http: HttpClient) {}
   getTasks(): Observable<any> {
     const url = `${this.apiUrl}/tasks`;

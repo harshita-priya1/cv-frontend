@@ -4,7 +4,7 @@ import { jwtDecode } from 'jwt-decode';
 import { Router } from '@angular/router';
 
 export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
-  if (req.url === 'http://localhost:5001/user/refresh') {
+  if (req.url === 'https://cv-backend-4cdl9.ondigitalocean.app/user/refresh') {
     return next(req);
   }
   let router = inject(Router);
@@ -23,7 +23,7 @@ export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
       try {
         httpClient
           .post(
-            'http://localhost:5001/user/refresh',
+            'https://cv-backend-4cdl9.ondigitalocean.app/user/refresh',
             {
               refreshToken: localStorage.getItem('refreshToken'),
             },
