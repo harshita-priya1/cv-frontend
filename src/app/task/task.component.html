@@ -1,10 +1,26 @@
-<div>
-  <input type="checkbox" id="completed" name="completed" value="Completed" />
+<br />
+<br />
+<div class="wholetask">
+  <input
+    type="checkbox"
+    id="completed"
+    name="completed"
+    value="Completed"
+    [checked]="task.completed"
+    (change)="changeStatus()"
+  />
   <label for="completed">Completed</label>
 
   <div>{{ task.title }}</div>
 </div>
 <div>{{ task.description }}</div>
 <div>End Date</div>
-<button type="button" class="btn btn-primary">Delete</button>
-<button type="button" class="btn btn-primary">Update</button>
+<div *ngIf="task.endDate; else notApplicable">
+  {{ task.endDate | date : "yyyy-MM-dd" }}
+</div>
+<ng-template #notApplicable>Not Applicable</ng-template>
+
+<button type="button" class="btn btn-primary" (click)="onDelete()">
+  Delete
+</button>
+<button type="button" class="btn btn-primary" (click)="onEdit()">Update</button>

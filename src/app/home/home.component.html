@@ -1,14 +1,23 @@
 <nav class="nav">
   <div>Tasks</div>
-  <button class="button logout" type="button" class="btn btn-primary">
+  <button
+    class="button logout"
+    type="button"
+    class="btn btn-primary"
+    (click)="onLogout()"
+  >
     Log Out
   </button>
 </nav>
-
+<br />
+<button
+  class="button"
+  type="button"
+  class="btn btn-primary"
+  (click)="onAddTask()"
+>
+  Add New Task
+</button>
 <div class="list-of-tasks" *ngFor="let task of tasks">
   <app-task class="task" [task]="task"></app-task>
 </div>
-
-<button class="button" type="button" class="btn btn-primary">
-  Add New Task
-</button>

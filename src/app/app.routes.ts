@@ -24,7 +24,7 @@ export const routes: Routes = [
     component: CreateTaskComponent,
   },
   {
-    path: 'update-task',
+    path: 'update-task/:id',
     component: UpdateTaskComponent,
   },
 ];

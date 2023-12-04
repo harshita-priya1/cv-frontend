@@ -18,8 +18,6 @@ export class SignInComponent implements OnInit {
     console.log('SignInComponent initialized');
     const accessToken = localStorage.getItem('accessToken'); //handle when expired
     if (accessToken) {
-      console.log('accessToken', accessToken);
-      // Route to the homepage
       this.router.navigate(['/home']);
     } else {
       console.log('accessToken not found');

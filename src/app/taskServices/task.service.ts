@@ -12,7 +12,8 @@ interface User {
   providedIn: 'root',
 })
 export class TaskService {
-  private apiUrl = 'https://cv-backend-4cdl9.ondigitalocean.app';
+  // private apiUrl = 'https://cv-backend-4cdl9.ondigitalocean.app';
+  private apiUrl = 'http://localhost:5001';
   constructor(private http: HttpClient) {}
   getTasks(): Observable<any> {
     const url = `${this.apiUrl}/tasks`;
@@ -95,7 +96,6 @@ export class TaskService {
     id: string,
     title: string,
     description: string,
-    completed: boolean,
     endDate: Date
   ): Observable<any> {
     //take initial values and send them to the backend if user doesnt change anything
@@ -115,7 +115,6 @@ export class TaskService {
     const body = {
       title: title,
       description: description,
-      completed: completed,
       endDate: endDate,
     };
     return this.http.put(url, body, {

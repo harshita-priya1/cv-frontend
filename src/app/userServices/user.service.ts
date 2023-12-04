@@ -6,21 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl = 'https://cv-backend-4cdl9.ondigitalocean.app';
+  // private apiUrl = 'https://cv-backend-4cdl9.ondigitalocean.app';
+  private apiUrl = 'http://localhost:5001';
   constructor(private http: HttpClient) {}
 
   signIn(email: string, password: string): Observable<any> {
     const url = `${this.apiUrl}/user/signin`;
-    // const accessToken: string | null = localStorage.getItem('accessToken');
-    // const refreshToken: string | null = localStorage.getItem('refreshToken');
-    // const user: string | null = localStorage.getItem('user');
 
     const body = {
       email: email,
       password: password,
-      // accessToken: accessToken,
-      // refreshToken: refreshToken,
-      // user: user,
     };
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.post(url, body, { headers: headers });
@@ -45,5 +40,18 @@ export class UserService {
     return this.http.post(`${this.apiUrl}/user/signup`, body, {
       headers: headers,
     });
+  }
+  logOut(): Observable<any> {
+    const accessToken = localStorage.getItem('accessToken');
+    const refreshToken = localStorage.getItem('refreshToken');
+    const url = `${this.apiUrl}/user/logout`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${accessToken}`,
+    });
+    const body = {
+      refreshToken: refreshToken,
+    };
+    return this.http.post(url, body, { headers: headers });
   }
 }
