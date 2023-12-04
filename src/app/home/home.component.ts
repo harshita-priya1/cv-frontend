@@ -39,7 +39,11 @@ export class HomeComponent implements OnInit {
     }
     this.taskService.getTasks().subscribe((response: any) => {
       console.log(response);
-      this.tasks = response.data;
+      //setting access token
+      if (response.accessToken) {
+        localStorage.setItem('accessToken', response.accessToken);
+      }
+      if (response.status === 200) this.tasks = response.data;
     });
   }
   onLogout() {

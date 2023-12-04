@@ -41,6 +41,17 @@ export class UserService {
       headers: headers,
     });
   }
+  refreshAccessToken(): Observable<any> {
+    const refreshToken = localStorage.getItem('refreshToken');
+    const url = `${this.apiUrl}/user/refresh`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    const body = {
+      refreshToken: refreshToken,
+    };
+    return this.http.post(url, body, { headers: headers });
+  }
   logOut(): Observable<any> {
     const accessToken = localStorage.getItem('accessToken');
     const refreshToken = localStorage.getItem('refreshToken');

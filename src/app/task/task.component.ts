@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { DatePipe, NgIf } from '@angular/common';
 import { TaskService } from '../taskServices/task.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-task',
@@ -18,6 +19,10 @@ export class TaskComponent {
     this.taskService.deleteTask(this.task._id).subscribe(
       (response: any) => {
         console.log(response);
+        //setting access token
+        if (response.accessToken) {
+          localStorage.setItem('accessToken', response.accessToken);
+        }
         if (response.status === 200) {
           console.log('Task deleted');
           this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -38,8 +43,12 @@ export class TaskComponent {
     console.log(this.task._id);
     this.router.navigate(['/update-task', this.task._id]);
   }
-  changeStatus(): void {
-    this.taskService.changeStatus(this.task._id).subscribe((updatedTask) => {
+  changeStatus(): any {
+    this.taskService.changeStatus(this.task._id).subscribe((response: any) => {
+      //setting access token
+      if (response.accessToken) {
+        localStorage.setItem('accessToken', response.accessToken);
+      }
       this.router.routeReuseStrategy.shouldReuseRoute = () => false;
       this.router.onSameUrlNavigation = 'reload';
       this.router.navigate(['/home']);

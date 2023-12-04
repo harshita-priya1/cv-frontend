@@ -32,10 +32,10 @@ export class SignUpComponent implements OnInit {
     console.log(`password: ${form.value.password}`);
     this.userService
       .signUp(
-        form.value.email,
-        form.value.password,
         form.value.name,
-        form.value.phone
+        form.value.phone,
+        form.value.email,
+        form.value.password
       )
       .subscribe(
         (response: any) => {
