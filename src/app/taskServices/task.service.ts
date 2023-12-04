@@ -136,9 +136,13 @@ export class TaskService {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${accessToken}`,
     });
-    return this.http.put(url, {
-      headers: headers,
-      params: params,
-    });
+    return this.http.put(
+      url,
+      {},
+      {
+        headers: headers,
+        params: params,
+      }
+    );
   }
 }
