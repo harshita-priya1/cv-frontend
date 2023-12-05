@@ -1,8 +1,14 @@
 # Cv-frontend- The Frontend for the CV Assignment
-- # Client Side of the Task App
-- # Uses Angular 17
-- # Hosted on Vercel
-- # Backend uses Node.js, express.js and MongoDB
+- ## Client Side of the Task App
+- ## Uses Angular 17
+- ## Hosted on Vercel
+- ## Backend uses Node.js, express.js and MongoDB
+
+## Application hosted on Vercel
+- Deployed link: https://cv-frontend-mu.vercel.app/
+- Demo Credentials:
+  - Email: user@test.com
+  - Password: 12345678
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
 
