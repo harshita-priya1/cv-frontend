@@ -90,6 +90,7 @@ textarea:focus {
 }
 
 .btn-primary:hover {
+  color: #fff;
   background-color: #120b07;
 }
 .btn-group {

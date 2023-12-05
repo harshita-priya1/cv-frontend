@@ -30,8 +30,8 @@ form {
   max-width: 400px;
   margin: 50px auto;
   padding: 20px;
-  border: 1px solid #8d8480;
-  background-color: #8d8480;
+  border: 1px solid #c5b5a6;
+  background-color: #c5b5a6;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   border-radius: 10%;
 }
@@ -72,6 +72,7 @@ input::placeholder {
 }
 
 .btn:hover {
+  color: white;
   background-color: #120b07;
 }
 

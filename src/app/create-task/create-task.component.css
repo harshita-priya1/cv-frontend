@@ -97,6 +97,7 @@ textarea::placeholder {
 
 .btn-primary:hover {
   background-color: #120b07;
+  color: #fff;
 }
 
 .btn-group {
