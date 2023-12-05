@@ -1,37 +1,93 @@
-/* Use a custom font for the form */
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
-/* Set the background color and font for the body */
 body {
   background-color: #f0f0f0;
   font-family: "Roboto", sans-serif;
 }
 
-/* Add a new class name "container" to style the div that covers the whole space */
 .container {
   width: 100%;
   height: 100vh;
   padding: 10px;
-  background-color: #685850; /* Make the div olive in color */
-  display: flex; /* Use flexbox to center the form */
+  background-color: #685850;
+  display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
-/* Center the form and give it some margin and padding */
-
-/* Style the form group divs */
 .form-group {
   margin-bottom: 15px;
 }
 
-/* Style the labels */
 label {
   font-size: 16px;
   display: block;
   font-weight: bold;
   color: #4a301e;
   margin-bottom: 5px;
+}
+form {
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #8d8480;
+  background-color: #8d8480;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 10%;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  margin: 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #423025;
+}
+
+input:focus {
+  outline: none;
+  border-color: #423025;
+  color: #423025;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4), 0 0 5px rgba(66, 48, 37, 1);
+}
+input::placeholder {
+  color: #685850;
+}
+
+.btn {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #bebbba;
+  background-color: #423025;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #120b07;
+}
+
+a {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #423025;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 /* Style the input fields */
@@ -52,71 +108,3 @@ form {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 } */
-form {
-  width: 100%; /* Set the form width to 100% */
-  max-width: 400px; /* Set a maximum width for the form */
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #8d8480;
-  background-color: #8d8480;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  border-radius: 10%;
-}
-
-/* Style the input fields */
-input {
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  width: 100%;
-  height: 40px;
-  padding: 10px;
-  margin: 0; /* Remove default margin */
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-  color: #423025;
-}
-
-/* Add some focus effect to the input fields */
-input:focus {
-  outline: none;
-  border-color: #423025;
-  color: #423025;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4), 0 0 5px rgba(66, 48, 37, 1);
-}
-input::placeholder {
-  color: #685850;
-}
-
-/* Style the submit button */
-.btn {
-  width: 100%;
-  height: 50px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #bebbba;
-  background-color: #423025;
-  cursor: pointer;
-}
-
-/* Add some hover effect to the submit button */
-.btn:hover {
-  background-color: #120b07;
-}
-
-/* Style the sign in link */
-a {
-  display: block;
-  text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-  color: #423025;
-  text-decoration: none;
-}
-
-/* Add some hover effect to the sign in link */
-a:hover {
-  text-decoration: underline;
-}

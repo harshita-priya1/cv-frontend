@@ -2,26 +2,15 @@
   <nav class="nav">
     <img src="../../assets/theTaskApp.png" alt="Logo" class="logo" />
     <h1 class="app-name">The Task App</h1>
-    <button
-      class="button logout"
-      type="button"
-      class="btn btn-primary"
-      (click)="onLogout()"
-    >
-      Log Out
-    </button>
+    <button class="logout" type="button" (click)="onLogout()">Log Out</button>
   </nav>
   <div class="container">
-    <h1 class="Taskstitle">Your Tasks</h1>
-    <br />
-    <button
-      class="button"
-      type="button"
-      class="btn btn-primary"
-      (click)="onAddTask()"
-    >
+    <button type="button" class="btn" (click)="onAddTask()">
       Add New Task
     </button>
+    <br />
+    <br />
+    <h1 class="Taskstitle">Your Tasks</h1>
     <div class="list-of-tasks" *ngFor="let task of tasks">
       <app-task class="task" [task]="task"></app-task>
     </div>
