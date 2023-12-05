@@ -46,13 +46,13 @@ export class SignUpComponent implements OnInit {
             localStorage.setItem('user', JSON.stringify(response.user));
             this.router.navigate(['/home']);
           } else {
-            alert('Error while signing up!');
-            console.log(response.message);
+            alert('Error while signing up: ' + response.error.message);
+            console.log(response.error.message);
           }
         },
         (error: any) => {
-          console.log(error.message);
-          alert('Error while signing up!');
+          console.log(error.error.message);
+          alert('Error while signing up: ' + error.error.message);
         }
       );
     form.reset();

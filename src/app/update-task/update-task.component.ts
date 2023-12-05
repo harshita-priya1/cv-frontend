@@ -45,13 +45,13 @@ export class UpdateTaskComponent implements OnInit {
             }
             this.router.navigate(['/home']);
           } else {
-            alert('Error while updating task!');
-            console.log(response.message);
+            alert('Error while updating task: ' + response.error.message);
+            console.log(response.error.message);
           }
         },
         (error: any) => {
-          console.log(error.message);
-          alert('Error while updating task!');
+          console.log(error.error.message);
+          alert('Error while updating task: ' + error.error.message);
         }
       );
 

@@ -26,13 +26,13 @@ export class TaskComponent {
           this.router.onSameUrlNavigation = 'reload';
           this.router.navigate(['/home']);
         } else {
-          alert('Error while deleting task!');
-          console.log(response.message);
+          alert('Error while deleting task: ' + response.error.message);
+          console.log(response.error.message);
         }
       },
       (error: any) => {
-        console.log(error.message);
-        alert('Error while deleting task!');
+        console.log(error.error.message);
+        alert('Error while deleting task: ' + error.error.message);
       }
     );
   }

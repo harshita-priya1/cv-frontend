@@ -7,6 +7,12 @@ export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
   if (req.url === 'https://cv-backend-4cdl9.ondigitalocean.app/user/refresh') {
     return next(req);
   }
+  if (req.url === 'https://cv-backend-4cdl9.ondigitalocean.app/user/signin') {
+    return next(req);
+  }
+  if (req.url === 'https://cv-backend-4cdl9.ondigitalocean.app/user/signup') {
+    return next(req);
+  }
   let router = inject(Router);
   let httpClient = inject(HttpClient);
   const accessToken = localStorage.getItem('accessToken');

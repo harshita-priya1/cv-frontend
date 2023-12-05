@@ -33,13 +33,13 @@ export class CreateTaskComponent {
           if (response.status === 201) {
             this.router.navigate(['/home']);
           } else {
-            alert('Error while creating task!');
-            console.log(response.message);
+            alert('Error while creating task: ' + response.error.message);
+            console.log(response.error.message);
           }
         },
         (error: any) => {
-          console.log(error.message);
-          alert('Error while creating task!');
+          console.log(error.error.message);
+          alert('Error while creating task: ' + error.error.message);
         }
       );
 

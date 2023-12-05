@@ -37,13 +37,13 @@ export class SignInComponent implements OnInit {
           localStorage.setItem('user', JSON.stringify(response.user));
           this.router.navigate(['/home']);
         } else {
-          alert('Error while signing in!');
-          console.log(response.message);
+          alert('Error while signing in: ' + response.error.message);
+          console.log(response.error.message);
         }
       },
       (error: any) => {
-        console.log(error.message);
-        alert('Error while signing in!');
+        console.log(error.error.message);
+        alert(`Error while signing in: ${error.error.message}`);
       }
     );
     form.reset();
