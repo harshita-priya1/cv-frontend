@@ -1,34 +1,51 @@
 <div class="main">
   <div class="wholetask">
-    <div class="checkbox">
-      <input
-        type="checkbox"
-        id="completed"
-        name="completed"
-        value="Completed"
-        [checked]="task.completed"
-        (change)="changeStatus()"
-      />
-      <label for="completed">Completed</label>
-    </div>
-    <h2>{{ task.title }}</h2>
-    <div>{{ task.description }}</div>
-    <div class="datediv">
-      <div>End Date:</div>
-      <div *ngIf="task.endDate; else notApplicable" style="color: #4a301e">
-        {{ task.endDate | date : "yyyy-MM-dd" }}
+    <div class="task-nobtns">
+      <div class="task-left">
+        <div class="checkbox">
+          <input
+            type="checkbox"
+            id="completed"
+            name="completed"
+            [checked]="task.completed"
+            (change)="changeStatus()"
+          />
+        </div>
+        <div class="task-data">
+          <div class="task-text">
+            <div class="Tasktitle">{{ task.title }}</div>
+            <div class="task-description">{{ task.description }}</div>
+          </div>
+          <div>
+            <div *ngIf="task.endDate; else notApplicable" class="datediv">
+              <div style="color: #4a301e">Due:</div>
+              <div style="color: #4a301e">
+                {{ task.endDate | date : "yyyy-MM-dd" }}
+              </div>
+            </div>
+            <ng-template #notApplicable><br /></ng-template>
+          </div>
+        </div>
       </div>
-      <ng-template #notApplicable
-        ><span style="color: #4a301e">Not Applicable</span></ng-template
-      >
-    </div>
-    <div class="buttons">
-      <button type="button" class="btn btn-primary" (click)="onDelete()">
-        Delete
-      </button>
-      <button type="button" class="btn btn-primary" (click)="onEdit()">
-        Update
-      </button>
+
+      <div class="task-right">
+        <div class="buttons">
+          <button
+            type="button"
+            class="btn btn-primary update"
+            (click)="onEdit()"
+          >
+            Update
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary delete"
+            (click)="onDelete()"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

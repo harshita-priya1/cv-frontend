@@ -3,15 +3,19 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: Arial, sans-serif;
   background-color: #4a301e;
 }
 .container {
-  background-color: #4a301e;
+  background-color: #fff;
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .Taskstitle {
-  text-decoration: underline;
-  margin-left: 20vw;
+  text-decoration: none;
+  font-weight: bold;
   color: #4a301e;
 }
 .main {
@@ -22,11 +26,15 @@ html {
 
 .nav {
   background-color: #4a301e;
+  position: fixed;
   color: white;
   display: flex;
   align-items: center;
   padding: 10px;
   gap: 10px;
+  left: 0;
+  right: 0;
+  top: 0;
 }
 img {
   width: 5%;
@@ -35,7 +43,7 @@ img {
 .app-name {
   font-weight: bold;
   margin-right: auto;
-  color: #bebbba;
+  color: #e8e4df;
   font-size: 24px;
 }
 
@@ -45,30 +53,38 @@ button {
   border: none;
   border-radius: 5px;
 }
-.btn {
+/* .btn {
   padding: 10px 20px;
   color: white;
   background-color: #4a301e;
-}
+} */
 .btn:hover {
-  color: #8d8480;
+  color: #fff;
   background-color: #120b07;
 }
-.logout {
+.btn {
   padding: 10px 10px;
   color: #4a301e;
-  background-color: #bebbba;
+  background-color: #c5b5a6;
   margin: 5px;
 }
 .logout:hover {
   color: #423025;
   background-color: #8d8480;
 }
+.logout-col {
+  background-color: #d9b8b8;
+  color: #592828;
+}
+.logout-col:hover {
+  background-color: #8c4646;
+  color: #ffffff;
+}
 
 .container {
   flex: 1;
   padding: 20px;
-  background-color: #bebbba;
+  background-color: #e8e4df;
 }
 
 .section-header {
@@ -87,13 +103,14 @@ button {
 }
 
 .task {
-  background-color: #8d8480;
+  background-color: #c5b5a6;
   padding: 8px;
   margin: 16px;
   width: 80%;
   max-width: 500px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
 }
 
 /* .logout {
