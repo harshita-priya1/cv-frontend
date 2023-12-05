@@ -39,14 +39,18 @@ export class HomeComponent implements OnInit {
     }
     this.taskService.getTasks().subscribe((response: any) => {
       console.log(response);
-      // //setting access token
-      // if (response.accessToken) {
-      //   localStorage.setItem('accessToken', response.accessToken);
-      // }
       if (response.status === 200) this.tasks = response.data;
     });
   }
   onLogout() {
+    let user = localStorage.getItem('user');
+    let userName = JSON.parse(user!).name;
+    const confirmLogout = confirm(
+      'Hey ' + userName + '! Do you really want to log out?'
+    );
+    if (!confirmLogout) {
+      return;
+    }
     this.userService.logOut();
     localStorage.clear();
     this.router.navigate(['/sign-in']);

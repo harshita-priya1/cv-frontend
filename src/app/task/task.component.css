@@ -54,6 +54,15 @@
 }
 .task-description {
   overflow-wrap: break-word;
+  font-size: 1.2rem;
+}
+@media (width<400px) {
+  .Tasktitle {
+    font-size: 1.2rem;
+  }
+  .task-description {
+    font-size: 1rem;
+  }
 }
 .task-data {
   width: 70%;

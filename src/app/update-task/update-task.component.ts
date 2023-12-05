@@ -39,10 +39,6 @@ export class UpdateTaskComponent implements OnInit {
         (response: any) => {
           console.log(response);
           if (response.status === 200) {
-            //setting access token
-            if (response.accessToken) {
-              localStorage.setItem('accessToken', response.accessToken);
-            }
             this.router.navigate(['/home']);
           } else {
             alert('Error while updating task: ' + response.error.message);

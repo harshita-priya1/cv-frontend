@@ -6,11 +6,12 @@ html {
   background-color: #4a301e;
 }
 .container {
-  background-color: #fff;
+  background-color: #e8e4df;
+  min-height: 100svh;
   margin-top: 70px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
 }
 .Taskstitle {
@@ -81,11 +82,11 @@ button {
   color: #ffffff;
 }
 
-.container {
+/* .container {
   flex: 1;
   padding: 20px;
   background-color: #e8e4df;
-}
+} */
 
 .section-header {
   font-size: 24px;
@@ -100,6 +101,11 @@ button {
   flex-direction: column;
   align-items: center;
   margin-top: 8px;
+}
+@media (width <400px) {
+  .list-of-tasks {
+    margin-top: 0;
+  }
 }
 
 .task {

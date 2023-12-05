@@ -98,7 +98,6 @@ export class TaskService {
     description: string,
     endDate: Date
   ): Observable<any> {
-    //take initial values and send them to the backend if user doesnt change anything
     const url = `${this.apiUrl}/tasks/${id}`;
     const accessToken: string | null = localStorage.getItem('accessToken');
     const refreshToken: string | null = localStorage.getItem('refreshToken');

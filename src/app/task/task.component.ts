@@ -16,6 +16,12 @@ export class TaskComponent {
   constructor(private taskService: TaskService, private router: Router) {}
   onDelete() {
     console.log('Delete button clicked');
+    const confirmDelete = confirm(
+      'Do you really want to delete task ' + this.task.title + '?'
+    );
+    if (!confirmDelete) {
+      return;
+    }
     this.taskService.deleteTask(this.task._id).subscribe(
       (response: any) => {
         console.log(response);
