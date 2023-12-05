@@ -5,6 +5,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
 import { UpdateTaskComponent } from './update-task/update-task.component';
 
+//added routes to all components
 export const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   {

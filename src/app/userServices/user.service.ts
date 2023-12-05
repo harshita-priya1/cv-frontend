@@ -5,11 +5,13 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
+
+// contains all the methods that will be used to make HTTP requests to the backend to user related endpoints
 export class UserService {
   private apiUrl = 'https://cv-backend-4cdl9.ondigitalocean.app';
   // private apiUrl = 'http://localhost:5001';
   constructor(private http: HttpClient) {}
-
+  //for sign in
   signIn(email: string, password: string): Observable<any> {
     const url = `${this.apiUrl}/user/signin`;
 
@@ -20,6 +22,7 @@ export class UserService {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.post(url, body, { headers: headers });
   }
+  //for sign up
   signUp(
     name: string,
     phone: string,
@@ -41,6 +44,7 @@ export class UserService {
       headers: headers,
     });
   }
+  //for refreshing accessToken
   refreshAccessToken(): Observable<any> {
     const refreshToken = localStorage.getItem('refreshToken');
     const url = `${this.apiUrl}/user/refresh`;
@@ -52,6 +56,7 @@ export class UserService {
     };
     return this.http.post(url, body, { headers: headers });
   }
+  //for logging out
   logOut(): Observable<any> {
     const accessToken = localStorage.getItem('accessToken');
     const refreshToken = localStorage.getItem('refreshToken');

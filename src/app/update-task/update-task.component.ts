@@ -17,13 +17,16 @@ export class UpdateTaskComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) {
-    this.id = this.route.snapshot.paramMap.get('id')!;
+    this.id = this.route.snapshot.paramMap.get('id')!; //to get the task id from the url
   }
+
   ngOnInit() {
+    //this is called when the component is initialized and is called only once
     console.log('Update task component initialized', this.id);
   }
 
   onSubmit(form: NgForm) {
+    //submitted to update task
     console.log('Updating task...');
     console.log(`task name: ${form.value.title}`);
     console.log(`task description: ${form.value.description}`);

@@ -37,17 +37,25 @@ export class HomeComponent implements OnInit {
     } else {
       console.log('accessToken', accessToken);
     }
-    this.taskService.getTasks().subscribe((response: any) => {
-      console.log(response);
-      if (response.status === 200) this.tasks = response.data;
-    });
+    //to get all the tasks
+    this.taskService.getTasks().subscribe(
+      (response: any) => {
+        console.log(response);
+        if (response.status === 200) this.tasks = response.data;
+      },
+      (error: any) => {
+        console.log(error.error.message);
+        alert('Error while getting all tasks: ' + error.error.message);
+      }
+    );
   }
   onLogout() {
+    //to log out
     let user = localStorage.getItem('user');
     let userName = JSON.parse(user!).name;
     const confirmLogout = confirm(
       'Hey ' + userName + '! Do you really want to log out?'
-    );
+    ); //to confirm if you want to log out
     if (!confirmLogout) {
       return;
     }
@@ -57,6 +65,7 @@ export class HomeComponent implements OnInit {
     //check if clicking on forward or back button of browser doesnt route back to home page
   }
   onAddTask() {
+    //to go to the create task component
     console.log('Add task button clicked');
     this.router.navigate(['/create-task']);
     console.log('Navigated to create task page');

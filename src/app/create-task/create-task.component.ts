@@ -15,6 +15,7 @@ export class CreateTaskComponent {
   constructor(private router: Router, private taskService: TaskService) {}
 
   onSubmit(form: NgForm) {
+    //submitted to create task
     console.log('Creating task...');
     console.log(`task name: ${form.value.title}`);
     console.log(`task description: ${form.value.description}`);

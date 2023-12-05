@@ -24,6 +24,7 @@ export class SignInComponent implements OnInit {
     }
   }
   onSubmit(form: NgForm) {
+    //submitted to sign in
     console.log('Sign in form submitting...');
     console.log(`email: ${form.value.email}`);
     console.log(`password: ${form.value.password}`);

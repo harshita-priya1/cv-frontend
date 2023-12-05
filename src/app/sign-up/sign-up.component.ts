@@ -25,6 +25,7 @@ export class SignUpComponent implements OnInit {
     }
   }
   onSubmit(form: NgForm) {
+    //submitted to sign up
     console.log('Sign in form submitting...');
     console.log(`email: ${form.value.name}`);
     console.log(`email: ${form.value.phone}`);

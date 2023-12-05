@@ -3,14 +3,18 @@ import { inject } from '@angular/core';
 import { jwtDecode } from 'jwt-decode';
 import { Router } from '@angular/router';
 
+// This is a custom HttpInterceptor that will be used to intercept all HTTP requests
 export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
   if (req.url === 'https://cv-backend-4cdl9.ondigitalocean.app/user/refresh') {
+    //to avoid infinite loop
     return next(req);
   }
   if (req.url === 'https://cv-backend-4cdl9.ondigitalocean.app/user/signin') {
+    //to avoid intercepting login and signup requests
     return next(req);
   }
   if (req.url === 'https://cv-backend-4cdl9.ondigitalocean.app/user/signup') {
+    //to avoid intercepting login and signup requests
     return next(req);
   }
   let router = inject(Router);
@@ -18,13 +22,14 @@ export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
   const accessToken = localStorage.getItem('accessToken');
   let decodedToken;
   if (accessToken) {
-    decodedToken = jwtDecode(accessToken);
+    decodedToken = jwtDecode(accessToken); //decode the token to get the expiry date
     console.log('decodedToken: ', decodedToken.exp, Date.now() / 1000);
     const isExpired =
       decodedToken && decodedToken.exp
         ? decodedToken.exp < Date.now() / 1000
         : false;
     if (isExpired) {
+      //asking for new access token if expired
       console.log('Access token expired');
       try {
         httpClient
@@ -57,6 +62,7 @@ export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
             }
           });
       } catch (e) {
+        //if refresh token is expired so route to sign in page
         console.log(e);
         localStorage.removeItem('accessToken');
         localStorage.removeItem('refreshToken');

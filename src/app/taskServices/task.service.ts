@@ -11,10 +11,13 @@ interface User {
 @Injectable({
   providedIn: 'root',
 })
+
+// contains all the methods that will be used to make HTTP requests to the backend to task related endpoints
 export class TaskService {
   private apiUrl = 'https://cv-backend-4cdl9.ondigitalocean.app';
   // private apiUrl = 'http://localhost:5001';
   constructor(private http: HttpClient) {}
+  //for getting all tasks
   getTasks(): Observable<any> {
     const url = `${this.apiUrl}/tasks`;
     const accessToken: string | null = localStorage.getItem('accessToken');
@@ -31,6 +34,7 @@ export class TaskService {
     });
     return this.http.get(url, { headers: headers, params: params });
   }
+  //for creating a task
   createTask(
     title: string,
     description: string,
@@ -60,6 +64,7 @@ export class TaskService {
       params: params,
     });
   }
+  //for getting a task
   getTask(id: string): Observable<any> {
     const url = `${this.apiUrl}/tasks/${id}`;
     const accessToken: string | null = localStorage.getItem('accessToken');
@@ -76,6 +81,7 @@ export class TaskService {
     });
     return this.http.get(url, { headers: headers, params: params });
   }
+  //for deleting a task
   deleteTask(id: string): Observable<any> {
     const url = `${this.apiUrl}/tasks/${id}`;
     const accessToken: string | null = localStorage.getItem('accessToken');
@@ -92,6 +98,7 @@ export class TaskService {
     });
     return this.http.delete(url, { headers: headers, params: params });
   }
+  //for updating a task
   updateTask(
     id: string,
     title: string,
@@ -121,6 +128,7 @@ export class TaskService {
       params: params,
     });
   }
+  //for changing status of a task
   changeStatus(id: string): Observable<any> {
     const url = `${this.apiUrl}/tasks/completed/${id}`;
     const accessToken: string | null = localStorage.getItem('accessToken');
