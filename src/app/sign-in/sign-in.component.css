@@ -49,9 +49,6 @@ input {
   color: #423025;
 }
 
-.small-container {
-}
-
 .form-control:focus {
   outline: none;
   border-color: #423025;
